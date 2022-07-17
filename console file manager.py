@@ -1,5 +1,6 @@
 # Планирую все делать через функции и модули, размещая их в папках рл направлениям
 import os
+import subprocess
 from platform import node
 
 while True:
@@ -83,9 +84,9 @@ while True:
     elif choice == '9':
         pass
     elif choice == '10':
-        pass
+        subprocess.call("D:/Neural_university/Python/Python_Lesson5/victory/victory.py", shell=True)
     elif choice == '11':
-        pass
+        subprocess.call("D:/Neural_university/Python/Python_Lesson5/bank account/bank account.py", shell=True)
     elif choice == '12':
         break
     else:
