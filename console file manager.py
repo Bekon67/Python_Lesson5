@@ -15,8 +15,8 @@ while True:
     print('9. создатель программы')
     print('10. играть в викторину')
     print('11. мой банковский счет')
-    print('11. смена рабочей директории(*необязательный пункт)')
-    print('12. выход')
+    print('12. смена рабочей директории(*необязательный пункт)')
+    print('13. выход')
 
     choice = input('Выберите пункт меню: ')
     if choice == '1':
@@ -82,12 +82,25 @@ while True:
         print(node())
         # https://codeby.net/threads/poluchaem-informaciju-o-sisteme-s-pomoschju-python-chast-1.79797/
     elif choice == '9':
-        pass
+        print('Автор Константин Бейлин')
     elif choice == '10':
         subprocess.call("D:/Neural_university/Python/Python_Lesson5/victory/victory.py", shell=True)
     elif choice == '11':
         subprocess.call("D:/Neural_university/Python/Python_Lesson5/bank account/bank account.py", shell=True)
     elif choice == '12':
-        break
+        print('Ваша текущая директория:', os.getcwd())
+        folders = []
+        for e in os.listdir():
+            if os.path.isdir(e):
+                folders.append(e)
+        print('Папки внутри Вашей директории:', folders, sep='\n')
+        name_file = input('Введите  путь к папке, куда Вы хотите перейти:\n ')
+        if os.path.exists(name_file):
+            os.chdir(name_file)
+            print("Новая директория:", os.getcwd())
+        else:
+            print('Директории с таким именем не существует')
+    elif choice == '13':
+        exit()
     else:
         print('Неверный пункт меню')
